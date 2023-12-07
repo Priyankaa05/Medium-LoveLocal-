@@ -4,27 +4,35 @@ Q 2.Given an integer array of size n, find all elements that appear more than �
 Explaination:
 majorityElement Function:
 
-This function takes a list of integers (nums) as input and returns a list of elements that appear more than ⌊ n/3 ⌋ times in the array.
-The function uses the Boyer-Moore Voting Algorithm to find potential majority elements efficiently.
+The given code is an implementation of the Boyer-Moore Majority Vote algorithm to find elements that appear more than ⌊ n/3 ⌋ times in an array.
+
 Initialization:
 
-count1, count2, candidate1, and candidate2 are initialized to 0 and 1. These variables are used to keep track of the counts and candidates for potential majority elements.
-First Loop:
+count1, count2, candidate1, and candidate2 are initialized to 0 and 1.
+Majority Voting:
 
-The first loop iterates through the elements in nums.
-If the current number is equal to candidate1 or candidate2, the corresponding count is incremented.
-If count1 or count2 is 0, the current number becomes a candidate, and the count is set to 1.
+The first loop iterates through the array nums.
+If the current number is equal to candidate1 or candidate2, the respective count is incremented.
+If either count is 0, the current number becomes the new candidate, and its count is set to 1.
 If both counts are non-zero, both counts are decremented.
-Second Loop:
+Counting:
 
-After the first loop, the function resets count1 and count2 to 0 and iterates through nums again to count occurrences of the potential majority candidates.
-Result Calculation:
+The second loop counts the occurrences of candidate1 and candidate2 in the array.
+Result Generation:
 
-The function checks if the counts of the potential majority candidates (candidate1 and candidate2) are greater than ⌊ n/3 ⌋. If so, the candidates are added to the result list.
-User Input:
+If the count of candidate1 is greater than ⌊ n/3 ⌋, it is added to the result.
+If the count of candidate2 is greater than ⌊ n/3 ⌋, it is added to the result.
+Result Output:
 
-The code then takes user input for the array. The user is prompted to enter elements separated by spaces.
-Function Call and Print:
+The final result is printed.
+Algorithm:
+The algorithm uses the Boyer-Moore Majority Vote algorithm, which aims to find at most two candidates that may appear more than ⌊ n/3 ⌋ times in the array.
 
-The majorityElement function is called with the user-input array, and the result is printed.
-The code combines the Boyer-Moore Voting Algorithm with user input to find elements that appear more than ⌊ n/3 ⌋ times in the given array.
+The algorithm performs two passes through the array, first for finding potential candidates and their counts, and second for counting the occurrences of these candidates.
+
+The time complexity is O(n), where n is the length of the input array.
+
+The space complexity is O(1) since the algorithm uses constant space for variables.
+
+In summary, the code efficiently finds elements that appear more than ⌊ n/3 ⌋ times in an array using the Boyer-Moore Majority Vote algorithm.
+
